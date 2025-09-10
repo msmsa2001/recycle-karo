@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RecycleKaro — EPR (Recreation)</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Global Styles */
+  :root {
+      --primary-blue: #4463AC;
+      --accent-green: #37AC37;
+      --btn-testi: #77FFD2;
+      --light-mint: #F2FBF6;
+      --dark-navy: #4463AC;
+      --muted-gray: #6B7380;
+      --white: #FFFFFF;
+  }
+
+  * {
+
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+
+        body {
+            font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            margin: 0;
+            color: #222;
+            background: #fff;
+            line-height: 1.5
+        }
+
+        .hero {
+            background-image: url('/mnt/data/b9be38fe-dbbe-4ac4-8675-089c90f8cf4d.png');
+            background-size: cover;
+            background-position: center;
+            padding: 70px 20px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        /* Header Styles */
+  header {
+      background-color: transparent;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+      padding: 20px 20px;
+  }
+
+  header.scrolled {
+      background-color: var(--dark-navy);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+  }
+
+  .logo a {
+      color: black;
+      text-decoration: none;
+  }
+
+  nav ul {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+  }
+
+  nav ul li a {
+      color: black;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      transition: color 0.3s;
+  }
+
+  nav ul li a:hover {
+      color: var(--accent-green);
+  }
+
+  nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-green);
+      transition: width 0.3s;
+  }
+
+  nav ul li a:hover::after {
+      width: 100%;
+  }
+
+  .mobile-menu-btn {
+      display: none;
+      color: var(--white);
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+  }
+
+
+  /* Dropdown styles */
+  nav ul li {
+      position: relative;
+  }
+
+  nav ul li .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--dark-navy);
+      list-style: none;
+      padding: 10px 0;
+      border-radius: 6px;
+      min-width: 180px;
+  }
+
+  nav ul li .dropdown-menu li {
+      padding: 8px 20px;
+  }
+
+  nav ul li .dropdown-menu li a {
+      color: var(--white);
+      font-size: 14px;
+      text-transform: none;
+      letter-spacing: normal;
+  }
+
+  nav ul li:hover>.dropdown-menu {
+      display: block;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+      nav ul {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 70px;
+          right: 20px;
+          background: var(--dark-navy);
+          width: 220px;
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      nav ul li {
+          margin: 12px 0;
+      }
+
+      .mobile-menu-btn {
+          display: block;
+      }
+
+      /* Dropdown inside mobile */
+
+      nav ul li .dropdown-menu {
+          position: static;
+          background: none;
+          box-shadow: none;
+          padding: 0;
+          border-radius: 0;
+      }
+
+      nav ul li .dropdown-menu li {
+          padding: 8px 0 8px 15px;
+      }
+  }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            margin-bottom: 18px
+        }
+
+        .logo {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .logo .mark {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700
+        }
+
+        .nav {
+            color: #fff;
+            opacity: 0.95
+        }
+
+        .panel {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.99) 100%);
+            margin-top: 28px;
+            padding: 36px;
+            border-radius: 4px;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            box-shadow: 0 8px 30px rgba(12, 30, 70, 0.06)
+        }
+
+        .left {
+            flex: 1
+        }
+
+        .eyebrow {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 8px;
+            letter-spacing: 0.6px
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--deep);
+            font-size: 36px;
+            margin: 0 0 18px
+        }
+
+        p.lead {
+            color: #444;
+            margin-bottom: 22px
+        }
+
+        .article h3 {
+            margin-top: 20px;
+            color: #111
+        }
+
+        .article p {
+            color: #54575a;
+            font-size: 15px
+        }
+
+        .right {
+            width: 330px
+        }
+
+        form.card {
+            background: #fff;
+            border-radius: 6px;
+            padding: 18px;
+            border: 1px solid #e6e8ee
+        }
+
+        form .title {
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #222
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 12px
+        }
+
+        input[type=text],
+        input[type=email],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #e6e8ee;
+            border-radius: 4px;
+            margin-top: 6px;
+            font-size: 14px
+        }
+
+        textarea {
+            min-height: 100px
+        }
+
+        .submit {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 10px 18px;
+            border-radius: 20px;
+            border: 1px solid var(--deep);
+            background: transparent;
+            color: var(--deep);
+            font-weight: 700;
+            cursor: pointer
+        }
+
+        /* Boost section */
+        .boost {
+            padding: 60px 0;
+            background: linear-gradient(180deg, #f3fff6, #f3fbff)
+        }
+
+        .boost h2 {
+            font-family: 'Playfair Display';
+            color: var(--deep);
+            font-size: 28px;
+            margin: 0 0 8px
+        }
+
+        .three {
+            display: flex;
+            gap: 24px;
+            margin-top: 26px
+        }
+
+        .cardcol {
+            flex: 1;
+            background: transparent;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: center
+        }
+
+        .iconcircle {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 16px rgba(12, 30, 80, 0.05)
+        }
+
+        .cardcol h4 {
+            font-weight: 700;
+            margin-bottom: 10px
+        }
+
+        .cardcol p {
+            font-size: 14px;
+            color: #4b5563
+        }
+
+        /* strengths */
+        .strengths {
+            padding: 48px 30px
+        }
+
+        .strengths h3 {
+            font-family: 'Playfair Display';
+            color: var(--deep);
+            font-size: 24px;
+            margin-bottom: 18px
+        }
+
+        .grid4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px
+        }
+
+        .strength {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 16px;
+            border-radius: 10px;
+            border: 1px solid #eef4f3;
+            background: #fff
+        }
+
+        .strength .ic {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .strength h5 {
+            margin: 0;
+            font-size: 15px
+        }
+
+        .strength p {
+            margin: 6px 0 0;
+            font-size: 13px;
+            color: #6b7280
+        }
+
+        /* two column paragraphs */
+        .two-cols {
+            display: flex;
+            gap: 24px;
+            padding: 36px 0
+        }
+
+        .two-cols .col {
+            flex: 1;
+            background: #f7fbfb;
+            padding: 18px;
+            border-radius: 6px
+        }
+
+       
+/* CTA Section */
+  .cta {
+      padding: 80px 20px;
+      text-align: center;
+      color: #2c3e90;
+      background: #f9fafc;
+  }
+
+  .cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+  }
+
+  .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+  }
+
+  .cta-btn {
+      color: #2ecc71;
+      padding: 15px 40px;
+      border-radius: 30px;
+      border: 2px solid #2ecc71;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s;
+      display: inline-block;
+  }
+
+  .cta-btn:hover {
+      background-color: #2c3e90;
+      color: white;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+      .blog-section h2 {
+          font-size: 30px;
+      }
+
+      .cta h2 {
+          font-size: 2rem;
+      }
+
+      .cta p {
+          font-size: 1rem;
+      }
+
+      .bg-shape-left,
+      .bg-shape-right {
+          width: 180px;
+      }
+  }
+
+  @media (max-width: 600px) {
+      .blog-section {
+          padding: 60px 15px;
+      }
+
+      .cta {
+          padding: 60px 15px;
+      }
+
+      .cta h2 {
+          font-size: 1.8rem;
+      }
+
+      .cta p {
+          font-size: 0.95rem;
+      }
+
+      .cta-btn {
+          padding: 12px 30px;
+          font-size: 0.9rem;
+      }
+  }
+
+  /* Footer */
+  .footer {
+      background: #2c3e90;
+      color: white;
+      padding: 60px 0 30px 30px;
+  }
+
+  .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr;
+      gap: 60px;
+      margin-bottom: 40px;
+  }
+
+  .footer-logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #2ecc71;
+      margin-bottom: 20px;
+  }
+
+  .footer-logo i {
+      margin-right: 8px;
+  }
+
+  .footer-tagline {
+      opacity: 0.8;
+      line-height: 1.6;
+  }
+
+  .footer-links h4 {
+      color: #2ecc71;
+      margin-bottom: 20px;
+      font-weight: 600;
+  }
+
+  .footer-links ul {
+      list-style: none;
+  }
+
+  .footer-links ul li {
+      margin-bottom: 10px;
+  }
+
+  .footer-links ul li a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s;
+  }
+
+  .footer-links ul li a:hover {
+      color: #2ecc71;
+  }
+
+  .footer-contact h4 {
+      color: #2ecc71;
+      margin-bottom: 20px;
+      font-weight: 600;
+  }
+
+  .contact-item {
+      margin-bottom: 15px;
+      opacity: 0.8;
+  }
+
+  .contact-item i {
+      color: #2ecc71;
+      margin-right: 10px;
+      width: 20px;
+  }
+
+  .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 30px;
+      text-align: center;
+      opacity: 0.6;
+  }
+
+
+  .chat-widget {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: var(--primary-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 99;
+      transition: all 0.3s;
+  }
+
+  .chat-widget:hover {
+      transform: scale(1.1);
+  }
+
+  /* Animations */
+  @keyframes fadeInLeft {
+      from {
+          opacity: 0;
+          transform: translateX(-50px);
+      }
+
+      to {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translateY(50px);
+      }
+
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+  }   
+
+  /* ---------------- Responsive Adjustments ---------------- */
+
+/* Tablets & smaller desktops */
+@media (max-width: 992px) {
+  .panel {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .three {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .grid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .two-cols {
+    flex-direction: column;
+  }
+
+  header .logo {
+    font-size: 20px;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .hero {
+    padding: 50px 15px 30px;
+  }
+
+  h1 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .panel {
+    padding: 24px;
+  }
+
+  .three {
+    flex-direction: column;
+  }
+
+  .grid4 {
+    grid-template-columns: 1fr;
+  }
+
+  .two-cols {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cta {
+    padding: 50px 15px;
+  }
+
+  .cta h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta p {
+    font-size: 0.95rem;
+  }
+
+  .cta-btn {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  nav ul {
+    right: 15px;
+    top: 60px;
+    width: 200px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+     <!-- Header Section -->
+<header id="header">
+<div class="container header-content">
+    <div class="logo"><a href="/index.html">♻ RECYCLKARO</a></div>
+    <nav>
+      <ul>
+        <li><a href="/about.html">ABOUT US</a></li>
+        <li class="dropdown">
+          <a href="#recycling">RECYCLING ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/e-waste.html">E-waste</a></li>
+            <li><a href="/battery.html">Battery</a></li>
+            <li><a href="/erp.html">ERP</a></li>
+            <li><a href="/vehicle.html">Vehicle</a></li>
+            <li><a href="#">Office Demolition</a></li>
+          </ul>
+        </li>
+        <li><a href="/metal.html">OUR METALS</a></li>
+        <li class="dropdown">
+          <a href="#media">MEDIA ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Blogs</a></li>
+          </ul>
+        </li>
+        <li><a href="/contactus.html">CONTACT</a></li>
+      </ul>
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+
+    <section class="hero">
+        <div class="container">
+            <div class="topbar">
+                <div class="logo">
+                    <div class="mark">RK</div>
+                    <div><strong style="color:#fff">RECYCLEKARO</strong></div>
+                </div>
+                <nav class="nav">ABOUT US &nbsp;&nbsp; RECYCLING &nbsp;&nbsp; OUR METALS</nav>
+            </div>
+
+            <div class="panel container" style="max-width:var(--max-width)">
+                <div class="left">
+                    <div class="eyebrow">ADDRESSING THE E-WASTE CRISIS:</div>
+                    <h1>The Importance of Extended Producer Responsibility (EPR)</h1>
+                    <div class="article">
+                        <p class="lead">In today's digital age, electronic devices have become an integral part of our
+                            lives. From smartphones and laptops to televisions and home appliances, electronics have
+                            transformed the way we communicate, work, and entertain ourselves. However, this rapid
+                            technological advancement comes at a cost - the exponential rise in electronic waste or
+                            e-waste. To tackle this growing crisis, the concept of Extended Producer Responsibility
+                            (EPR) has emerged as a crucial solution.</p>
+
+                        <h3>The E-Waste Challenge</h3>
+                        <p>E-waste refers to discarded electronic devices, components, and accessories, many of which
+                            contain hazardous materials like lead, mercury, and cadmium. As technology evolves at an
+                            unprecedented pace, electronic devices have shorter lifespans, leading to a rapid increase
+                            in e-waste generation. Improper disposal of e-waste has detrimental effects on the
+                            environment, public health, and resource conservation.</p>
+
+                        <h3>Understanding Extended Producer Responsibility (EPR)</h3>
+                        <p>EPR is a policy approach aimed at making manufacturers responsible for the entire lifecycle
+                            of their products, including their post-consumer stage. This article explores how EPR shifts
+                            the burden of waste management from local governments and consumers to the producers,
+                            encouraging them to design products with environmental considerations in mind and
+                            establishing mechanisms for collecting and recycling discarded products.</p>
+                    </div>
+                </div>
+
+                <aside class="right">
+                    <form class="card">
+                        <div class="title">Get in Touch</div>
+                        <label>Name<input type="text" placeholder="Enter your name"></label>
+                        <label>City<input type="text" placeholder="Enter your city"></label>
+                        <label>Company Email Id<input type="email" placeholder="Enter your email id"></label>
+                        <label>Phone Number<input type="text" placeholder="Enter your mobile no"></label>
+                        <label>Company<input type="text" placeholder="Enter your company name"></label>
+                        <label>Choose Category<select>
+                                <option>EPR</option>
+                                <option>Recycling</option>
+                            </select></label>
+                        <label>Message<textarea placeholder="Message"></textarea></label>
+                        <button class="submit" type="button">SUBMIT →</button>
+                    </form>
+                </aside>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="boost">
+        <div class="container" style="max-width:var(--max-width)">
+            <h2>Boosting<br />Circular Economy</h2>
+            <div class="three">
+                <div class="cardcol">
+                    <div class="iconcircle">🌱</div>
+                    <h4>Product Design for Sustainability</h4>
+                    <p>EPR incentivizes manufacturers to design products that are more durable, repairable, and
+                        recyclable. This approach encourages the reduction of hazardous materials and promotes modular
+                        designs that make it easier to replace specific components.</p>
+                </div>
+                <div class="cardcol">
+                    <div class="iconcircle">🔁</div>
+                    <h4>Collection and Recycling Infrastructure</h4>
+                    <p>Manufacturers are required to establish collection and recycling systems for their products at
+                        the end of their useful life. This ensures that e-waste is properly managed, reducing
+                        environmental and health risks associated with improper disposal.</p>
+                </div>
+                <div class="cardcol">
+                    <div class="iconcircle">💰</div>
+                    <h4>Financial Responsibility</h4>
+                    <p>EPR places the financial burden of collection, recycling, and proper disposal of products on the
+                        manufacturers. This encourages them to factor in the cost of waste management when setting
+                        product prices, providing a financial incentive for eco-friendly design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="strengths container" style="max-width:var(--max-width)">
+        <h3>Our Strengths</h3>
+        <div class="grid4">
+            <div class="strength">
+                <div class="ic">🌿</div>
+                <div>
+                    <h5>Environmental Conservation</h5>
+                    <p>By encouraging eco-friendly design and responsible disposal, EPR reduces the amount of e-waste
+                        that ends up in landfills or is incinerated, thus minimizing soil, water, and air pollution.</p>
+                </div>
+            </div>
+            <div class="strength">
+                <div class="ic">🔄</div>
+                <div>
+                    <h5>Resource Recovery</h5>
+                    <p>EPR promotes the recovery of valuable materials from discarded electronics, such as precious
+                        metals and rare earth elements, reducing the need for raw material extraction.</p>
+                </div>
+            </div>
+            <div class="strength">
+                <div class="ic">💼</div>
+                <div>
+                    <h5>Job Creation</h5>
+                    <p>The establishment of collection centers and recycling facilities creates new employment
+                        opportunities in the waste management and recycling sectors.</p>
+                </div>
+            </div>
+            <div class="strength">
+                <div class="ic">❤️</div>
+                <div>
+                    <h5>Reduced Health Risks</h5>
+                    <p>E-waste often contains toxic substances that can harm human health if not properly managed. EPR
+                        reduces exposure of both workers and the general population to hazardous materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="max-width:var(--max-width)">
+        <div class="two-cols">
+            <div class="col">
+                <h4>Global Implementation of EPR</h4>
+                <p>EPR is a policy approach aimed at making manufacturers responsible for the lifecycle of their
+                    products, including their post-consumer stage. The concept has gained prominence and is being
+                    implemented in regions across the world as a tool to address the challenges posed by e-waste.</p>
+            </div>
+            <div class="col">
+                <h4>Conclusion</h4>
+                <p>As the world continues to embrace technological innovation, the challenge of e-waste cannot be
+                    ignored. Extended Producer Responsibility (EPR) offers a holistic solution by making manufacturers
+                    accountable for the end-of-life management of their products. This not only benefits the environment
+                    and public health but also promotes resource efficiency and sustainable economic growth.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- CTA Section -->
+    <section class="cta fade-in">
+        <div class="container">
+            <h2>Together, let's shape Tomorrow, today</h2>
+            <p>Be a part of Recyclekaro's journey towards responsible progress.</p>
+            <a href="#" class="cta-btn">Join Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-recycle"></i>
+                        Recyclekaro
+                    </div>
+                    <p class="footer-tagline">Leading the transformation towards a sustainable future through innovative
+                        recycling solutions and environmental stewardship.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Recycling</a></li>
+                        <li><a href="#metals">Our Metals</a></li>
+                        <li><a href="#blog">Blogs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        info@recyclekaro.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-headset"></i>
+                        support@recyclekaro.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        (022) 40332314 / +91-9892733198
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Evergreen Recycling India Pvt. Ltd.<br>Mumbai, India
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 recyclekaro.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // simple submit demo
+        document.querySelectorAll('.submit').forEach(btn => btn.addEventListener('click', () => {
+            btn.innerText = 'Sending...';
+            setTimeout(() => { btn.innerText = 'SUBMIT →'; alert('Form submitted (demo)') }, 900);
+        }));
+        
+        
+// Header scroll effect
+window.addEventListener('scroll', function() {
+  const header = document.getElementById('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// Mobile menu toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navMenu = document.querySelector('nav ul');
+
+mobileMenuBtn.addEventListener('click', function() {
+  navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+});
+      
+    </script>
+</body>
+
+</html>
