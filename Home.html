@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecycleKaro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+    
+</head>
+<body>
+   <!-- Header Section -->
+<header id="header">
+  <div class="container header-content">
+    <div class="logo"><a href="/Home.html">♻ RECYCLKARO</a></div>
+    <nav>
+      <ul>
+        <li><a href="/About.html">ABOUT US</a></li>
+        <li class="dropdown">
+          <a href="#recycling">RECYCLING ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/E-waste.html">E-waste</a></li>
+            <li><a href="/Battery.html">Battery</a></li>
+            <li><a href="#">ERP</a></li>
+            <li><a href="#">Vehicle</a></li>
+            <li><a href="#">Office Demolition</a></li>
+          </ul>
+        </li>
+        <li><a href="/Metal.html">OUR METALS</a></li>
+        <li class="dropdown">
+          <a href="#media">MEDIA ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Blogs</a></li>
+          </ul>
+        </li>
+        <li><a href="/contactus.html">CONTACT</a></li>
+      </ul>
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-tag">#RECYCLEKARO</div>
+            <h1>Crafting Change<br>Crafting You</h1>
+            <p>Recyclekaro stands as a trailblazing force, seamlessly blending social responsibility with commercial ingenuity.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn">KNOW MORE</a>
+                <a href="#" class="btn" style="background: transparent; border: 2px solid var(--accent-green);">GET IN TOUCH</a>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">61,074 MT</div>
+                    <div class="stat-label">RECYCLING</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5,497 MT</div>
+                    <div class="stat-label">REUSE</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">400,000 MT</div>
+                    <div class="stat-label">FORECAST FOR 2026</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200; // smaller = faster
+
+    counters.forEach(counter => {
+      // Extract numeric part (ignore commas and MT)
+      const target = parseInt(counter.innerText.replace(/[^0-9]/g, ''), 10);
+      counter.innerText = "0 MT"; // reset to 0 before animation
+
+      const animate = () => {
+        const current = parseInt(counter.innerText.replace(/[^0-9]/g, ''), 10);
+        const increment = Math.ceil(target / speed);
+
+        if (current < target) {
+          const newValue = current + increment;
+          counter.innerText = newValue.toLocaleString() + " MT";
+          setTimeout(animate, 20);
+        } else {
+          counter.innerText = target.toLocaleString() + " MT";
+        }
+      };
+
+      animate();
+    });
+  });
+</script>
+
+
+    
+    <!-- About Section -->
+    <!-- <section class="about" id="about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>ABOUT US</h2>
+                <p>Recyclekaro stands as a trailblazing force, seamlessly blending social responsibility with commercial ingenuity. With a resolute commitment to transforming waste into wealth, we're not just recycling; we're rejuvenating industries, supporting local economies, and catalyzing India's growth trajectory.</p>
+                <p>Through our strategic partnerships and innovative processes, we not only building a circular economy but also fostering job opportunities, empowering communities, and addressing the urgent need for sustainability.</p>
+                <p>Our dual mission encapsulates the essence of progress: not just for the environment, but also for the nation's economic prosperity. As we extract valuable resources, reduce waste, and align with global emission reduction goals, Recyclekaro is setting a powerful example of how social and commercial initiatives can coalesce for a brighter, greener future.</p>
+                <p>We don't just recycle; we craft melodies of change that resonate for generations to come.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/homepage/aboutus_sideimg.jpg" alt="Recycling Process" class="about-main-img">
+                <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/homepage/aboutus_sideimg.jpg" alt="Recycling Team" class="about-overlay-img">
+            </div>
+        </div>
+    </section> -->
+
+<!-- About Section -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-header">
+      <span class="about-label">ABOUT US</span>
+      <h2>Pioneering a <br><span>Greener Tomorrow</span></h2>
+      <p class="about-subtitle">
+        Recyclekaro stands as a trailblazing force, seamlessly blending social responsibility with commercial ingenuity.
+      </p>
+    </div>
+
+    <div class="about-body">
+      <p>
+        With a resolute commitment to transforming waste into wealth, we're not just recycling; we're rejuvenating
+        industries, supporting local economies, and catalyzing India's growth trajectory. Through our strategic
+        partnerships and innovative processes, we're addressing the urgent need for sustainability.
+      </p>
+      <p>
+        Our dual mission encapsulates the essence of progress: not just for the environment, but also for the nation's
+        economic prosperity. As we extract valuable resources, reduce waste, and align with global emission reduction
+        goals, Recyclekaro is setting a powerful example of how social and commercial initiatives can coalesce for a
+        brighter, greener future.
+      </p>
+    </div>
+
+    <!-- Decorative Images -->
+    <div class="about-images">
+      <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/homepage/aboutus_left_bottom1.webp" alt="Recycling Plant" class="circle-img left-img">
+      <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/homepage/aboutus_left_bottom1.png" alt="Green Sapling" class="circle-img right-img">
+    </div>
+  </div>
+</section>
+
+
+    <!-- Recycling Section -->
+   <section class="recycling" id="recycling">
+  <div class="container recycling-content">
+    <h2>RECYCLING</h2>
+    <p>
+      Recyclekaro focuses on completing the value chain of a circular economy, 
+      to recycle waste, extract valuable resources and supply them as raw materials to manufacturers.
+    </p>
+    <div class="recycling-categories">
+      <div class="category-item">
+        <div class="category-icon">
+          <i class="fas fa-trash-restore"></i>
+        </div>
+        <div class="category-name">Collection</div>
+      </div>
+      <div class="category-item">
+        <div class="category-icon">
+          <i class="fas fa-certificate"></i>
+        </div>
+        <div class="category-name">EPR</div>
+      </div>
+      <div class="category-item">
+        <div class="category-icon">
+          <i class="fas fa-car"></i>
+        </div>
+        <div class="category-name">Vehicle</div>
+      </div>
+      <div class="category-item">
+        <div class="category-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="category-name">Office</div>
+      </div>
+      <div class="category-item">
+        <div class="category-icon">
+          <i class="fas fa-laptop"></i>
+        </div>
+        <div class="category-name">E-waste</div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<!-- Stats Section -->
+<section class="stats">
+    <div class="container">
+        <h2>RECYCLEKARO IN NUMBERS</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-card-icon">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <div class="stat-card-number">4781 MT</div>
+                <div class="stat-card-label">E-waste recycled</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon">
+                    <i class="fas fa-battery-full"></i>
+                </div>
+                <div class="stat-card-number">403 MT</div>
+                <div class="stat-card-label">Cobalt recovered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="stat-card-number">17 MT</div>
+                <div class="stat-card-label">Lithium recovered</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <div class="stat-card-number">516 kg</div>
+                <div class="stat-card-label">High value precious metals recovered</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="metals-section">
+  <div class="metals-header">
+    <h2>
+      Metals extracted <br>
+      <span>during recycling</span>
+    </h2>
+    <div class="icons">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+
+  <div class="metals-grid">
+    <!-- Cobalt -->
+    <div class="metal-card">
+      <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/metals/cobalt.png" alt="Cobalt">
+      <div class="metal-info">
+        <h3>Co <sup>27</sup></h3>
+        <p>Cobalt</p>
+      </div>
+    </div>
+
+    <!-- Copper -->
+    <div class="metal-card">
+      <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/metals/copper.png" alt="Copper">
+      <div class="metal-info">
+        <h3>Cu <sup>29</sup></h3>
+        <p>Copper</p>
+      </div>
+    </div>
+
+    <!-- Gold -->
+    <div class="metal-card">
+      <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/metals/gold.png" alt="Gold">
+      <div class="metal-info">
+        <h3>Au <sup>79</sup></h3>
+        <p>Gold</p>
+      </div>
+    </div>
+
+    <!-- Silver -->
+    <div class="metal-card">
+      <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/metals/silver.png" alt="Silver">
+      <div class="metal-info">
+        <h3>Ag <sup>47</sup></h3>
+        <p>Silver</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Strategy Section -->
+    <section class="strategy">
+        <div class="container strategy-content">
+            <div class="strategy-text">
+                <h2>OUR STRATEGY</h2>
+                <h3>Forging Tomorrow: Empowering Progress with Latest Innovations</h3>
+                <p>At Recyclekaro, our strategy to success is deeply rooted in staying at the forefront of progress. Armed with the latest technology, we're not just recycling; we're redefining the landscape of sustainability.</p>
+                <a href="#" class="btn">KNOW MORE</a>
+                <p class="p1">Strategic Alliances forging a circular economy together</p>
+                <p>Recyclekaro has strategically partnered with businesses with long term vision of building sustainable solutions and be a part of the circular economy​</p>
+                <p>Shaping tomorrow crafting sustainable solutions today</p>
+
+            </div>
+            <div class="strategy-image">
+                <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/homepage/our_stratey_right.webp" alt="Strategy" class="strategy-main-img">
+                <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/homepage/our_strategy_circle.png" class="strategy-overlay-img">
+            </div>
+        </div>
+    </section>
+
+    
+<!-- Blog Section -->
+<section class="blog-section" id="blog">
+  <!-- Background Shapes (inside blog section so they align correctly) -->
+  <div class="bg-shape-left"></div>
+  <div class="bg-shape-right"></div>
+
+  <h2>Blogs</h2>
+  <div class="blog-container">
+    
+    <!-- Blog 1 -->
+    <div class="blog-card">
+      <img src="https://www.recyclekaro.com/wp-content/uploads/2024/12/how-lithium-batteries-recycled-300x179.webp" alt="EPR Registration">
+      <div class="blog-content">
+        <h3>Ev Battery Recycling in india [2025]</h3>
+        <p>25th August 2025</p>
+      </div>
+    </div>
+
+    <!-- Blog 2 -->
+    <div class="blog-card">
+      <img src="https://www.recyclekaro.com/wp-content/uploads/2025/08/EPR-Certificate-Recyclekaro-300x169.png" alt="Recycling E-Waste">
+      <div class="blog-content">
+       <h3>EPR Certificate Explained: Meaning, Process & Cost for Businesses [2025]</h3>
+        <p>25th August 2025</p>
+      </div>
+    </div>
+
+    <!-- Blog 3 -->
+    <div class="blog-card">
+      <img src="https://www.recyclekaro.com/wp-content/uploads/2025/07/advantages-of-recycling-ewaste-recyclekaro-300x179.jpeg" alt="Reduce E-Waste">
+      <div class="blog-content">
+         <h3>10 Advantages of Recycling E Waste [2025]</h3>
+        <p>25th July 2025</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+       <!-- CTA Section -->
+    <section class="cta fade-in">
+        <div class="container">
+            <h2>Together, let's shape Tomorrow, today</h2>
+            <p>Be a part of Recyclekaro's journey towards responsible progress.</p>
+            <a href="#" class="cta-btn">Join Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-recycle"></i>
+                        Recyclekaro
+                    </div>
+                    <p class="footer-tagline">Leading the transformation towards a sustainable future through innovative
+                        recycling solutions and environmental stewardship.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Recycling</a></li>
+                        <li><a href="#metals">Our Metals</a></li>
+                        <li><a href="#blog">Blogs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        info@recyclekaro.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-headset"></i>
+                        support@recyclekaro.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        (022) 40332314 / +91-9892733198
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Evergreen Recycling India Pvt. Ltd.<br>Mumbai, India
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 recyclekaro.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      // Header scroll effect
+window.addEventListener('scroll', function() {
+  const header = document.getElementById('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// Mobile menu toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navMenu = document.querySelector('nav ul');
+
+mobileMenuBtn.addEventListener('click', function() {
+  navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+});
+        
+        // Stats animation
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-card-number');
+            const statValues = [4781, 403, 17, 516];
+            
+            statNumbers.forEach((stat, index) => {
+                let startValue = 0;
+                const endValue = statValues[index];
+                const duration = 2000;
+                const increment = endValue / (duration / 16);
+                
+                const timer = setInterval(() => {
+                    startValue += increment;
+                    if (startValue >= endValue) {
+                        stat.textContent = endValue + (index === 3 ? ' kg' : ' MT');
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(startValue) + (index === 3 ? ' kg' : ' MT');
+                    }
+                }, 16);
+            });
+        }
+        
+        // Intersection Observer for stats animation
+        const statsSection = document.querySelector('.stats');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(statsSection);
+        
+        // Check for reduced motion preference
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (reducedMotion) {
+            // Disable animations if user prefers reduced motion
+            document.documentElement.style.scrollBehavior = 'auto';
+        }
+    </script>
+</body>
+</html>

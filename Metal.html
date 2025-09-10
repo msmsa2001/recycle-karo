@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecycleKaro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+    
+</head>
+<body>
+   <!-- Header Section -->
+<header id="header">
+  <div class="container header-content">
+    <div class="logo"><a href="/Home.html">♻ RECYCLKARO</a></div>
+    <nav>
+      <ul>
+        <li><a href="/About.html">ABOUT US</a></li>
+        <li class="dropdown">
+          <a href="#recycling">RECYCLING ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="/E-waste.html">E-waste</a></li>
+            <li><a href="/Battery.html">Battery</a></li>
+            <li><a href="#">ERP</a></li>
+            <li><a href="#">Vehicle</a></li>
+            <li><a href="#">Office Demolition</a></li>
+          </ul>
+        </li>
+        <li><a href="/Metal.html">OUR METALS</a></li>
+        <li class="dropdown">
+          <a href="#media">MEDIA ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Blogs</a></li>
+          </ul>
+        </li>
+        <li><a href="/contactus.html">CONTACT</a></li>
+      </ul>
+      <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+
+
+<section class="metals-section">
+  <div class="metals-header">
+    <h2>
+      Metals extracted <br>
+      <span>during recycling</span>
+    </h2>
+    <div class="icons">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+
+  <div class="metals-grid">
+    <!-- Cobalt -->
+    <div class="metal-card">
+      <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/metals/cobalt.png" alt="Cobalt">
+      <div class="metal-info">
+        <h3>Co <sup>27</sup></h3>
+        <p>Cobalt</p>
+      </div>
+    </div>
+
+    <!-- Copper -->
+    <div class="metal-card">
+      <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/metals/copper.png" alt="Copper">
+      <div class="metal-info">
+        <h3>Cu <sup>29</sup></h3>
+        <p>Copper</p>
+      </div>
+    </div>
+
+    <!-- Gold -->
+    <div class="metal-card">
+      <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/metals/gold.png" alt="Gold">
+      <div class="metal-info">
+        <h3>Au <sup>79</sup></h3>
+        <p>Gold</p>
+      </div>
+    </div>
+
+    <!-- Silver -->
+    <div class="metal-card">
+      <img src="https://www.recyclekaro.com/wp-content/themes/recyclekaro/assets/img/metals/silver.png" alt="Silver">
+      <div class="metal-info">
+        <h3>Ag <sup>47</sup></h3>
+        <p>Silver</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+       <!-- CTA Section -->
+    <section class="cta fade-in">
+        <div class="container">
+            <h2>Together, let's shape Tomorrow, today</h2>
+            <p>Be a part of Recyclekaro's journey towards responsible progress.</p>
+            <a href="#" class="cta-btn">Join Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-recycle"></i>
+                        Recyclekaro
+                    </div>
+                    <p class="footer-tagline">Leading the transformation towards a sustainable future through innovative
+                        recycling solutions and environmental stewardship.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Recycling</a></li>
+                        <li><a href="#metals">Our Metals</a></li>
+                        <li><a href="#blog">Blogs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        info@recyclekaro.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-headset"></i>
+                        support@recyclekaro.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        (022) 40332314 / +91-9892733198
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Evergreen Recycling India Pvt. Ltd.<br>Mumbai, India
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 recyclekaro.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      // Header scroll effect
+window.addEventListener('scroll', function() {
+  const header = document.getElementById('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// Mobile menu toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navMenu = document.querySelector('nav ul');
+
+mobileMenuBtn.addEventListener('click', function() {
+  navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+});
+
+    </script>

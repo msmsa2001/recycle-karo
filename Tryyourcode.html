@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+  body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #1d2d50;
+  line-height: 1.6;
+}
+
+h2, h3, h4 {
+  margin: 0 0 15px;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Header ===== */
+.contact-header {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d2d50;
+}
+
+/* ===== Map ===== */
+.map-wrapper {
+  position: relative;
+}
+.map-wrapper iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+.map-card {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 25px;
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+.map-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.map-card .contact-info p {
+  margin: 8px 0;
+  font-size: 15px;
+}
+.map-card i {
+  margin-right: 8px;
+  color: #2b47d9;
+}
+
+/* ===== Contact Section ===== */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 60px 20px;
+  justify-content: center;
+}
+
+.contact-form {
+  flex: 2;
+  min-width: 300px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-grid input,
+.form-grid select,
+textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 100%;
+}
+
+textarea {
+  margin-top: 15px;
+  min-height: 120px;
+}
+
+.submit-btn {
+  margin-top: 15px;
+  background: #1d2d50;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.submit-btn i {
+  margin-left: 6px;
+}
+
+.careers-card {
+  flex: 1;
+  min-width: 250px;
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.careers-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.careers-card i {
+  margin-right: 8px;
+  color: #2b47d9;
+}
+
+/* ===== CTA ===== */
+.cta {
+  background: #f0f5ff;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+}
+.cta h2 {
+  font-size: 28px;
+}
+.cta h2 span {
+  color: #2b47d9;
+}
+.join-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #2b47d9;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.join-btn i {
+  margin-left: 6px;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: #2b47d9;
+  color: #fff;
+  padding: 50px 20px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 30px;
+}
+.footer h3, .footer h4 {
+  margin-bottom: 10px;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+.footer ul li {
+  margin-bottom: 8px;
+}
+.socials a {
+  margin-right: 12px;
+  font-size: 18px;
+  color: #fff;
+}
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .map-card {
+    position: static;
+    width: auto;
+    margin: 15px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta {
+    border-radius: 0;
+  }
+}
+
+</style>
+<body>
+
+<!-- ===== Heading ===== -->
+<section class="contact-header">
+  <h2>Shaping a Greener Tomorrow: Let's Transform E-waste Recycling Together</h2>
+</section>
+
+<!-- ===== Map + Headquarters ===== -->
+<section class="contact-map">
+  <div class="map-wrapper">
+    <iframe src="//maps.google.com/maps?q=53.3381768,-6.2613077&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
+
+    <div class="map-card">
+      <h3>Our Headquarters</h3>
+      <p>
+        Evergreen Recyclekaro India Private Limited<br>
+        Office 1603, 16th floor, Building B, Atrium B, Rupa Solitaire,<br>
+        Millennium Business Park,<br>
+        Mahape, Navi Mumbai - 400710
+      </p>
+
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> (022)-41231340</p>
+        <p><i class="fas fa-mobile-alt"></i> (+91)-9967310007</p>
+        <p><i class="fas fa-envelope"></i> info@recyclekaro.com</p>
+        <p><i class="fas fa-envelope"></i> sales@recyclekaro.com</p>
+        <p><i class="fas fa-envelope"></i> media@recyclekaro.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact Form & Careers ===== -->
+<section class="contact-section">
+  <div class="form-wrapper">
+    <form class="contact-form">
+      <div class="form-grid">
+        <input type="text" placeholder="Enter your Name">
+        <select><option>Select State</option></select>
+        <select><option>Select City</option></select>
+        <input type="email" placeholder="Enter your email id">
+        <input type="text" placeholder="Enter your mobile">
+        <input type="text" placeholder="Enter your company">
+        <select><option>Choose Category</option></select>
+      </div>
+      <textarea placeholder="Message"></textarea>
+      <button type="submit" class="submit-btn">SUBMIT <i class="fas fa-arrow-right"></i></button>
+    </form>
+  </div>
+
+  <div class="careers-card">
+    <h3><i class="fas fa-user-tie"></i> Careers</h3>
+    <p>Explore our career opportunities and be a catalyst for positive change!</p>
+  </div>
+</section>
+
+<!-- ===== CTA Section ===== -->
+<section class="cta">
+  <h2>Together, lets shape <span>Tomorrow,</span> today</h2>
+  <p>Be a Part of Recyclekaro's Journey Towards Responsible Progress.</p>
+  <a href="#" class="join-btn">JOIN NOW <i class="fas fa-arrow-right"></i></a>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h3>RECYCLEKARO</h3>
+      <p>An initiative to Recycle in India, supporting businesses and our great nation to be the leaders of tomorrow.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <div>
+      <h4>COMPANY</h4>
+      <ul>
+        <li>About us</li>
+        <li>Recycling</li>
+        <li>Our Metals</li>
+        <li>Media</li>
+        <li>Contact us</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>CONTACT</h4>
+      <p><i class="fas fa-envelope"></i> info@recyclekaro.com<br>
+         <i class="fas fa-envelope"></i> support@recyclekaro.com</p>
+      <p><i class="fas fa-phone"></i> (022)-41231340<br>
+         <i class="fas fa-mobile-alt"></i> (+91)-9967310007</p>
+      <p>
+        Evergreen Recyclekaro India Limited<br>
+        Office 1603, 16th floor, Building B, Atrium B, Rupa Solitaire,<br>
+        Millennium Business Park,<br>
+        Mahape, Navi Mumbai - 400710
+      </p>
+    </div>
+  </div>
+  <p class="copyright">© 2024 recyclekaro.com. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
